@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(user_params[:password])
       session[:user_id] = @user.id
+
+      redirect_to dashboard_path
     else
       redirect_to new_sessions_path, message: 'Wrong credentials', status: :unauthorized
     end

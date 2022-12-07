@@ -1,2 +1,19 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="mx-auto my-10 rounded-lg shadow p-10 max-w-lg border-gray-600 border-solid border">
+  <h1 class="text-center text-2xl mb-6">Sign in</h1>
+
+  <%= form_for :user, url: sessions_path do |f| %>
+
+    <div class="mb-6">
+      <%= f.label :email, class: 'font-medium' %>
+      <%= f.email_field :email, class: 'input input-bordered w-full' %>
+    </div>
+
+    <div class="mb-6">
+      <%= f.label :password, class: 'font-medium' %>
+      <%= f.password_field :password, class: 'input input-bordered w-full' %>
+    </div>
+
+    <%= f.submit 'Sign in', class: 'btn' %>
+  <% end %>
+
+</div>

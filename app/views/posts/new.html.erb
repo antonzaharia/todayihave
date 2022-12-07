@@ -1,0 +1,5 @@
+<%= turbo_frame_tag "new_post" do %>
+    <h1 class="text-2xl text-center">Create a new post</h1>
+
+    <%= render partial: "posts/form", locals: { post: @post } %>
+<% end %>

@@ -1,0 +1,25 @@
+<%= form_for post, url: posts_path do |form| %>
+  <% if post.errors.any? %>
+    <% post.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+  <% end %>
+
+  <div class="mb-5">
+    <%= form.label :title, class: 'font-medium' %>
+    <%= form.text_field :title, class: 'input input-bordered w-full' %>
+  </div>
+
+  <div class="mb-5">
+    <%= form.label :content, class: 'font-medium' %>
+    <%= form.text_area :content, class: 'textarea input-bordered w-full' %>
+  </div>
+
+  <div class="mb-5">
+    <%= form.label :tags, class: 'font-medium' %>
+    <%= form.text_field :tags, value: post.tags.map(&:name).join(', '), class: 'input input-bordered w-full' %>
+  </div>
+
+  <%= form.submit 'Save', class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', dashboard_path, class: 'btn btn-ghost' %>
+<% end %>

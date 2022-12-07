@@ -1,1 +1,7 @@
-<h1>You are siggned in as <%= current_user.username %></h1>
+<h1 class="">You are siggned in as <%= current_user.username %></h1>
+
+<div class="my-5">
+    <%= turbo_frame_tag "new_post" do %>
+        <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
+    <% end %>
+</div>

@@ -5,3 +5,9 @@
         <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
     <% end %>
 </div>
+
+<div id="post_index">
+    <% @posts.each do |post| %>
+        <%= render post %>
+    <% end %>
+</div>

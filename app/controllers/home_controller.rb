@@ -6,5 +6,6 @@ class HomeController < ApplicationController
   end
 
   def dashboard
+    @posts = Post.all.order(created_at: :desc)
   end
 end

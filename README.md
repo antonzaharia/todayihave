@@ -1,24 +1,57 @@
-# README
+# TODAY I HAVE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### A Ruby on Rails application designed to connect people within the company, so that they can tell each other about what they have been working on, on a daily basis.
 
 Things you may want to cover:
 
-* Ruby version
+- Ruby version `3.1.2`
 
-* System dependencies
+## Install
 
-* Configuration
+- Clone the repository
 
-* Database creation
+```
+git clone git@bitbucket.org:vpcltd/today-i-have.git
+cd project
+```
 
-* Database initialization
+- Check your Ruby version
 
-* How to run the test suite
+```
+ruby -v
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+- Install the right version of Ruby if required
 
-* Deployment instructions
+```
+rbenv install 3.1.2
+```
 
-* ...
+## Install dependencies
+
+- Using Bundle and yarn
+
+```
+bundle && yarn
+```
+
+## Initialize the database
+
+```
+rails db:create db:migrate
+```
+
+## Install Redis
+
+```
+<!-- For Mac -->
+brew install redis
+```
+
+## Start the server
+
+```
+bin/dev
+```
+
+And visit [https://localhost:3000](https://localhost:3000)

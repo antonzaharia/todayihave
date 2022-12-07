@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get :dashboard, to: 'home#dashboard'
 
   resource :users, only: [:show, :new, :create]
+  resource :sessions, only: [:new, :create, :destroy]
 end

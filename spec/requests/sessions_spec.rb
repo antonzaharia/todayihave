@@ -35,4 +35,16 @@ RSpec.describe "Sessions", type: :request do
     end
   end
 
+  describe 'DELETE /sessions' do
+    let(:user) { FactoryBot.create(:user) }
+    before do
+      post '/sessions', params: { user: { email: user.email, password: user.password } }
+    end
+    it 'logs out the user' do
+      delete '/sessions'
+
+      expect(session[:user_id]).to eq(nil)
+    end
+  end
+
 end

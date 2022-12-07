@@ -15,8 +15,8 @@ RSpec.feature 'Posts' do
     click_button 'Save'
 
     expect(current_path).to eq('/dashboard')
-    expect(page.find('#post_index')).to have_text('Test title')
-    expect(page.find('#post_index')).to have_text('Test content')
+    expect(page.find('#posts')).to have_text('Test title')
+    expect(page.find('#posts')).to have_text('Test content')
   end
 
   scenario 'Updating a post' do

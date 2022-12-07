@@ -2,7 +2,7 @@
   <div class="card bg-neutral shadow-xl my-4">
     <div class="card-body">
       <h2 class="card-title"><%= post.title %></h2>
-      <p><%= post.content %></p>
+      <p><%= raw parse_content_at_mentions(post.content) %></p>
       <div class="card-actions justify-between">
         <div>
           <% post.tags.each do |tag| %>

@@ -11,16 +11,16 @@ class PostsController < ApplicationController
       if @post.save
         format.turbo_stream do
           render turbo_stream: [
-                   turbo_stream.prepend("post_index", partial: "posts/post", locals: { post: @post }),
-                   turbo_stream.update("new_post", template: "posts/new", locals: { post: Post.new }),
-                 ]
+            turbo_stream.prepend('post_index', partial: 'posts/post', locals: { post: @post }),
+            turbo_stream.update('new_post', template: 'posts/new', locals: { post: Post.new })
+          ]
         end
         format.html { redirect_to root_path }
       else
         format.turbo_stream do
           render turbo_stream: [
-                   turbo_stream.update("new_post", partial: "posts/form", locals: { post: @post }),
-                 ]
+            turbo_stream.update('new_post', partial: 'posts/form', locals: { post: @post })
+          ]
         end
         format.html { render :new, status: :unprocessable_entity }
       end

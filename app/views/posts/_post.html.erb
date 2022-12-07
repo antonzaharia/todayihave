@@ -1,0 +1,18 @@
+<%= turbo_frame_tag dom_id(post) do %>
+  <div class="card bg-neutral shadow-xl my-4">
+    <div class="card-body">
+      <h2 class="card-title"><%= post.title %></h2>
+      <p><%= post.content %></p>
+      <div class="card-actions justify-between">
+        <div>
+          <% post.tags.each do |tag| %>
+            <div class="badge badge-primary"><%= tag.name %></div>
+          <% end %>
+        </div>
+        <span class="text-xs">
+          by <%= post.user.username %>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %>

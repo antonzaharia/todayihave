@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        @post.broadcast_prepend_to 'post_index', target: 'posts', partial: 'posts/post', locals: { post: @post }
         @post.send_notifications_to_mentions
 
         format.turbo_stream do

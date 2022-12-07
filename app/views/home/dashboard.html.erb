@@ -7,14 +7,15 @@
 </div>
 
 <div class="mt-10">
-  <%= link_to 'Trending tags:', tags_path, class: 'btn btn-ghost' %>
+  <%= link_to "Trending tags:", tags_path, class: "btn btn-ghost" %>
   <% @tags.each do |tag| %>
     <%= render tag %>
   <% end %>
 </div>
 
-<div id="post_index">
-    <% @posts.each do |post| %>
-        <%= render post %>
-    <% end %>
+<%= turbo_stream_from "post_index" %>
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
 </div>

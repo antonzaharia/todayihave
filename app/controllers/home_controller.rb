@@ -7,5 +7,6 @@ class HomeController < ApplicationController
 
   def dashboard
     @posts = Post.all.order(created_at: :desc)
+    @tags = Tag.ordered_by_posts
   end
 end

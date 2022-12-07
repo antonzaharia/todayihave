@@ -1,0 +1,9 @@
+<div class="text-center my-6">
+  <h1 class="text-xl my-6">All tags</h1>
+  <% @tags.each do |tag| %>
+    <div>
+        <%= render tag %> -
+        <%= tag.posts.size %> post<%= tag.posts.size > 1 ? 's' : '' %>
+    </div>
+  <% end %>
+</div>

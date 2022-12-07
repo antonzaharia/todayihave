@@ -17,11 +17,11 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
-  # it 'is not valid without tags' do
-  #   post.tags = []
-  #   expect(post).to_not be_valid
-  #   expect(post.errors.full_messages.first).to eq("Tags can't be blank")
-  # end
+  it 'is not valid without tags' do
+    post.tags = []
+    expect(post).to_not be_valid
+    expect(post.errors.full_messages.first).to eq("Tags can't be blank")
+  end
 
   it 'is not valid with duplicated title in the same day' do
     new_post = FactoryBot.build(:post, title: post.title)

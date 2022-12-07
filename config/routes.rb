@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tags
   resources :posts
   root 'home#index'
   get :dashboard, to: 'home#dashboard'

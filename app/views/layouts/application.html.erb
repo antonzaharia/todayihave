@@ -10,7 +10,12 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="container mx-auto max-w-[1200px] px-10">
+    <nav>
+      <%= render partial: 'layouts/navbar' %>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

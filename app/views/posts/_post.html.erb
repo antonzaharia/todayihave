@@ -13,6 +13,13 @@
           by <%= post.user.username %>
         </span>
       </div>
+      <% if current_user == post.user %>
+        <%= turbo_frame_tag "edit_#{dom_id(post)}" do %>
+          <div class="card-actions justify-end">
+            <%= link_to 'Edit', edit_post_path(post), class: 'btn'%>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 <% end %>

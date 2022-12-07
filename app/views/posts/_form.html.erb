@@ -1,4 +1,4 @@
-<%= form_for post, url: posts_path do |form| %>
+<%= form_for post do |form| %>
   <% if post.errors.any? %>
     <% post.errors.each do |error| %>
       <li><%= error.full_message %></li>

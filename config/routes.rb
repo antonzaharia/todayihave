@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resource :users, only: [:show, :new, :create]
   resource :sessions, only: [:new, :create, :destroy]
   resources :tags, only: [:index, :show]
-  resources :posts, only: [:show, :new, :create]
+  resources :posts
 end

@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_07_114057) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_145505) do
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "post_id", null: false
+    t.boolean "viewed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_notifications_on_post_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "post_tags", force: :cascade do |t|
     t.integer "post_id", null: false
     t.integer "tag_id", null: false
@@ -44,6 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_114057) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "notifications", "posts"
+  add_foreign_key "notifications", "users"
   add_foreign_key "post_tags", "posts"
   add_foreign_key "post_tags", "tags"
   add_foreign_key "posts", "users"

@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        @post.send_notifications_to_mentions
+
         format.turbo_stream do
           render turbo_stream: [
             turbo_stream.prepend("post_index", partial: "posts/post", locals: { post: @post }),
@@ -37,6 +39,8 @@ class PostsController < ApplicationController
     create_or_delete_posts_tags(@post, post_params[:tags]) if post_params[:tags]
 
     respond_to do |format|
+      @post.send_notifications_to_mentions
+
       if @post.save
         format.turbo_stream do
           render turbo_stream: [

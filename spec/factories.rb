@@ -1,4 +1,10 @@
 FactoryBot.define do
+  factory :notification do
+    user { nil }
+    post { nil }
+    viewed { false }
+  end
+
   factory :post_tag do
     association :post, factory: :post
     association :tag, factory: :tag

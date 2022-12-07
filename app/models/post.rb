@@ -7,4 +7,13 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true
   validates :tags, presence: true
+
+  def send_notifications_to_mentions
+    content.scan(/@([a-zA-Z0-9_]+)/) do |match|
+      user = User.find_by(username: match[0])
+      if user.present?
+        user.notifications.create(post: self)
+      end
+    end
+  end
 end

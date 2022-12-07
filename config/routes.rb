@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get :dashboard, to: 'home#dashboard'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

@@ -140,6 +140,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
+    pg (1.5.4)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -215,9 +216,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.5.4-arm64-darwin)
-    sqlite3 (1.5.4-x86_64-darwin)
-    sqlite3 (1.5.4-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -260,6 +258,7 @@ DEPENDENCIES
   faker (~> 3.0)
   jbuilder
   jsbundling-rails
+  pg (~> 1.1)
   pry (~> 0.14.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
@@ -268,7 +267,6 @@ DEPENDENCIES
   rspec-rails (~> 6.0)
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails
   tzinfo-data
